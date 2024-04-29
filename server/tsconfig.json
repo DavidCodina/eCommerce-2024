@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "target": "ESNext",
+    "baseUrl": "src",
+    //"rootDir": "src",
+    "paths": {
+      "models/*": ["models/*"],
+      "views/*": ["views/*"],
+      "controllers/*": ["controllers/*"],
+      "middleware/*": ["middleware/*"],
+      "functions/*": ["functions/*"],
+      "utils/*": ["utils/*"],
+      "config/*": ["config/*"],
+      "public/*": ["public/*"],
+      "routes/*": ["routes/*"]
+    },
+    "strict": true,
+    "allowJs": true,
+    // Report errors in .js files.
+    "checkJs": false,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+
+    "noEmit": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    // "moduleResolution": "Bundler",
+    // "module": "ESNext",
+
+    // See Mike North intermediate typescript for why you might not want to do this.
+    // This may be needed for imports like import fs from 'fs' when module and
+    // moduleResolution are not using "NodeNext". However, for now it seems to
+    // be okay to omit it.
+    "esModuleInterop": true,
+
+    // Probably better just to omit this all together.
+    // By default all visible ”@types” packages are included in your compilation.
+    // Packages in node_modules/@types of any enclosing folder are considered visible.
+    // For example, that means packages within ./node_modules/@types/, ../node_modules/@types/, ../../node_modules/@types/, and so on.
+    // "types": ["node", "jest", "express"],
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules/**/*",
+    ".vscode/**/*",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "__tests__"
+  ]
+}
